@@ -42,6 +42,7 @@ def main(config, max_samples):
         actor = Actor.remote(
             "train-" + str(i), replay_buffer, parameter_server, config, eps
         )
+        # Kick off the training actors and immediately let them start sampling from their environments
         actor.sample.remote()
         training_actor_ids.append(actor)
 
