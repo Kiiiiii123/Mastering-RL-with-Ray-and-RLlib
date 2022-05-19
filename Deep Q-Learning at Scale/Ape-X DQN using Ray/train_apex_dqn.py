@@ -63,7 +63,7 @@ def main(config, max_samples):
         if (new_total_samples - total_samples) >= config["timesteps_per_iteration"]:
             total_samples = new_total_samples
             print("Total samples:", total_samples)
-            parameter_server.set_weights.remote()
+            parameter_server.set_eval_weights.remote()
             eval_sampling_ids = []
             for eval_actor in eval_actor_ids:
                 sid = eval_actor.sample.remote()
@@ -90,7 +90,7 @@ if __name__ == "__main__":
     max_samples = 500000
     config = {
         "env": "CartPole-v0",
-        "num_workers": 50,
+        "num_workers": 10,
         "eval_num_workers": 10,
         "n_step": 3,
         "max_eps": 0.5,

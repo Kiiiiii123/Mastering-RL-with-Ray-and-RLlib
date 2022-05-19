@@ -1,9 +1,9 @@
 # This script includes functions to create a feedforward neural network using TensorFlow/Keras.
-from tensorflow.python.keras import Input
-from tensorflow.python.keras import backend as K
-from tensorflow.python.keras.layers import Dense, Flatten, Lambda
-from tensorflow.python.keras.models import Model
-from tensorflow.python.keras.optimizers import Adam
+from tensorflow.keras import Input
+from tensorflow.keras import backend as K
+from tensorflow.keras.layers import Dense, Flatten, Lambda
+from tensorflow.keras.models import Model
+from tensorflow.keras.optimizers import Adam
 
 
 def masked_loss(args):

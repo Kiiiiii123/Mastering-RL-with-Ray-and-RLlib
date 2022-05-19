@@ -20,7 +20,7 @@ class ReplayBuffer:
 
     def sample(self, n):
         if len(self.buffer) > n:
-            sample_ix = np.random.randint(len(self.buffer), n)
+            sample_ix = np.random.randint(len(self.buffer), size=n)
             return [self.buffer[ix] for ix in sample_ix]
 
     def get_total_env_samples(self):

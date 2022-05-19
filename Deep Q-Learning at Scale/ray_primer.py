@@ -1,4 +1,3 @@
-from numpy import object_
 import ray
 
 # Initialize Ray

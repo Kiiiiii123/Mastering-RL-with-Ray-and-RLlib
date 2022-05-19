@@ -53,7 +53,7 @@ class Actor:
         return action
 
     def get_n_step_trans(self, n_step_buffer):
-        gamma = config["gamma"]
+        gamma = self.config["gamma"]
         discounted_return = 0
         cum_gamma = 1
         for trans in list(n_step_buffer)[:-1]:

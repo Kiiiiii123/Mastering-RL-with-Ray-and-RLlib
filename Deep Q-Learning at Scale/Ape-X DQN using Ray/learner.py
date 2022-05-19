@@ -3,9 +3,9 @@ import time
 
 import numpy as np
 import ray
-from tensorflow.python.keras.models import clone_model
+from tensorflow.keras.models import clone_model
 
-from models import get_Q_network
+from models import get_Q_network, get_trainable_model
 
 
 @ray.remote
@@ -14,7 +14,7 @@ class Learner:
         self.config = config
         self.replay_buffer = replay_buffer
         self.parameter_server = parameter_server
-        self.Q, self.trainable = get_Q_network(config)
+        self.Q, self.trainable = get_trainable_model(config)
         self.target_network = clone_model(self.Q)
         self.train_batch_size = config["train_batch_size"]
         self.total_collected_samples = 0
