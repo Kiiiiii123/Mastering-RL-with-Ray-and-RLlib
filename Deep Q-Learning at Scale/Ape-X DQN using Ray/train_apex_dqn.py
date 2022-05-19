@@ -34,7 +34,7 @@ def main(config, max_samples):
     training_actor_ids = []
     eval_actor_ids = []
 
-    learner.start_learning.remoe()
+    learner.start_learning.remote()
 
     # Create training actors
     for i in range(config["num_workers"]):
