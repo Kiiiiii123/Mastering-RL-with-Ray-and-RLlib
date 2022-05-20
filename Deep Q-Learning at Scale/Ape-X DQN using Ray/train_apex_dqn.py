@@ -90,7 +90,7 @@ if __name__ == "__main__":
     max_samples = 500000
     config = {
         "env": "CartPole-v0",
-        "num_workers": 10,
+        "num_workers": 50,
         "eval_num_workers": 10,
         "n_step": 3,
         "max_eps": 0.5,
