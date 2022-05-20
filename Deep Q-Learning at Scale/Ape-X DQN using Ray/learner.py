@@ -41,7 +41,7 @@ class Learner:
             N = len(samples)
             self.total_collected_samples += N
             self.samples_since_last_update += N
-            ndim_obs = 0
+            ndim_obs = 1
             for s in self.config["obs_shape"]:
                 if s:
                     ndim_obs *= s
