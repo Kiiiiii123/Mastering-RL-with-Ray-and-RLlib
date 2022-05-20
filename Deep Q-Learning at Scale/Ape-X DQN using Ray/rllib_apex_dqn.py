@@ -10,7 +10,7 @@ if __name__ == "__main__":
     config['env'] = 'CartPole-v0'
     config['num_workers'] = 50
     config['evaluation_num_workers'] = 10
-    config['evaluation_interval'] = 1 
+    config['evaluation_interval'] = 1 # iteration
     config['learning_starts'] = 5000
     tune.run(ApexTrainer, config=config)
 
