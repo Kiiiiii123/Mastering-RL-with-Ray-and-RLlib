@@ -1,6 +1,5 @@
 # This script includes the RL actor class that interacts with the environment and collects experiences.
 from collections import deque
-from distutils.command.config import config
 
 import gym
 import numpy as np
