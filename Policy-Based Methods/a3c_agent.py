@@ -3,10 +3,10 @@ import pprint
 
 import ray
 from ray import tune
-from ray.rllib.agents.a3c.a3c import DEFAULT_CONFIG
-from ray.rllib.agents.a3c.a3c import A3CTrainer as trainer
+from ray.rllib.agents.a3c.a3c import DEFAULT_CONFIG, A3CTrainer
 
 if __name__ == "__main__":
+    trainer = A3CTrainer
     parser = argparse.ArgumentParser()
     parser.add_argument("--env", help="Gym env name.")
     args = parser.parse_args()
