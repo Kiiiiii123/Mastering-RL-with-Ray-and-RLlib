@@ -3,11 +3,10 @@ import pprint
 
 import ray
 from ray import tune
-from ray.rllib.agents.a3c.a2c import A2C_DEFAULT_CONFIG as DEFAULT_CONFIG
-from ray.rllib.agents.a3c.a2c import A2CTrainer
+from ray.rllib.agents.ppo.ppo import DEFAULT_CONFIG
+from ray.rllib.agents.ppo.ppo import PPOTrainer as trainer
 
 if __name__ == "__main__":
-    trainer = A2CTrainer
     parser = argparse.ArgumentParser()
     parser.add_argument("--env", help="Gym env name.")
     args = parser.parse_args()
@@ -18,11 +17,9 @@ if __name__ == "__main__":
         "num_workers": 50,
         "evaluation_num_workers": 10,
         "evaluation_interval": 1,
-        "use_gae": True,
     }
     config.update(config_update)
     pp = pprint.PrettyPrinter(indent=4)
     pp.pprint(config)
     ray.init()
     tune.run(trainer, stop={"timesteps_total": 2000000}, config=config)
-    
